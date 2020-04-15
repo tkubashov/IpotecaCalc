@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+
+<p><h3>Ежемесячный расчет:</h3></p>
+<p><h2 style='color:black'>{{ the_credit_month }} руб.</h2></p>
+<p><h3>Сумма выплат банку за весь период с учетом процентов:</h3></p>
+<p><b>{{ the_credit_all }} руб.</b> ({{ the_overpayment }}% стоимости квартиры)</p>
+<p><h3>Величина переплаты:</h3></p>
+<p><b>{{ the_credit_over }} руб.</b></p>
+
+<form method='GET' action='/var' >
+<p><input value='График платежей' type='SUBMIT' ></p>
+</form>
+
+<form method='GET' action='/vcalc' >
+<p><input value='Логи' type='SUBMIT' ></p>
+</form>
+    {% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ the_title }}</h2>
+<p>Ипотечный калькулятор онлайн даст возможность заранее просчитать платеж,
+ который потребуется вносить каждый месяц при погашении займа.
+ Благодаря тому, что заемщик будет заранее проинформирован о том,
+ на какую сумму ему следует рассчитывать,
+ он сможет самостоятельно просчитать удобный срок займа, переплату.</p>
+
+<form method='POST' action='/calculation' >
+<table>
+ 
+    <p><i>Расчет ипотеки онлайн:</i></p>
+    <p><tr><td><b>Стоимость недвижимости, руб:</b></td><td style='width:200px;'><input name='property_value' type='TEXT' style ='width: 150px;'></td></tr></p>
+    <p><tr><td><b>Первоначальный взнос, руб:</b></td><td><input name='initial_payment' type='TEXT' style = 'width: 150px;' max='1000000'></td></tr></p>
+    <p><tr><td><b>Срок кредита, лет:</b></td><td><input name='loan_period' type='TEXT' style = 'width: 150px;' ></td></p>
+    <p><tr><td><b>Процентная ставка, %:</b></td><td><input name='interest_rate' type='TEXT' style = 'width: 150px;'></td></tr></p>
+	
+ 
+</table>
+<p><input value='Рассчитать' type='SUBMIT' ></p>
+</form>
+
+{% endblock %}
